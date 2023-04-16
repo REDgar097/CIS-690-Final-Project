@@ -10,8 +10,13 @@ var loginRouter = require('./routes/login');
 var accountsRouter = require('./routes/accounts');
 var dashboardRouter = require('./routes/dashboard');
 var patientsRouter = require('./routes/patients');
+var createPatientsRouter = require('./routes/patients');
+var createUsersRouter = require('./routes/patients');
 
 var app = express();
+
+const mongoose = require('mongoose');
+mongoose.connect(process.env['DBKEY'])
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,14 +34,16 @@ app.use('/login', loginRouter);
 app.use('/accounts', accountsRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/patients', patientsRouter);
+app.use('/createpatients', createPatientsRouter);
+app.use('/createusers', createUsersRouter);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

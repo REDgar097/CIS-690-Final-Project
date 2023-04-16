@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<%- include('./partials/header'); %>
+
+  <body>
+    <%- include('./partials/nav'); %>
+
+      <div class="container">
+        <div class="row">
+          <h1 class="patient-header">Create New Patient Account</h1>
+          <div class="col-4 form-container">
+            <h3>Patient Personal Information</h3>
+            <form method="post" action="/">
+              <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" class="form-control" name="firstName"
+                  id="firstName" placeholder="Enter First Name" required
+                  maxLength="20">
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" class="form-control" name="lastName"
+                  id="lastName" placeholder="Enter Last Name" required
+                  maxLength="20">
+              </div>
+              <div class="form-group">
+                <label for="dateOfBirth">Date of Birth:</label>
+                <input type="date" class="form-control" name="dateOfBirth"
+                  id="dateOfBirth" required>
+              </div>
+              <div class="form-group">
+                <label for="zipCode">Zipcode:</label>
+                <input type="text" class="form-control" name="zipCode"
+                  id="zipCode" placeholder="Enter Zipcode" required
+                  maxLength="10">
+              </div>
+              <div class="form-group">
+                <label for="stateSelect">State:</label>
+                <input type="text" class="form-control" id="stateSelect" name="selectstate" placeholder="Enter state">
+              </div>
+              <div class="form-group">
+                <label for="telNum">Telephone Number:</label>
+                <input type="tel" class="form-control" id="telNum" name="TelephoneNumber" placeholder="Enter telephone number">
+              </div>
+          </div>
+<div class="col-4 form-container">
+              <h3>Patient Medical Information</h3>
+
+              <div class="form-group">
+                <label for="createDate">Date of Creation:</label>
+                <input type="date" class="form-control" id="createDate" name="creationdate">
+              </div>
+              <div class="form-group">
+                <label for="insuranceType">Insurance Provider:</label>
+                <input type="text" class="form-control" id="insuranceType" name="insuranceprovider" placeholder="Type of heath insurance">
+              </div>
+              <div class="form-group">
+                <label for="testType">Test:</label>
+                <input type="text" class="form-control" id="testType" name="testtype" placeholder="Type of Test being administered">
+              </div>
+              <div class="form-group">
+                <label for="docService">Service Provided:</label>
+                <input type="text" class="form-control" id="docService" name="doctorservice" placeholder="Service provided">
+              </div>
+               <div class="form-group">
+                <label for="labName">Laboratory Name:</label>
+                <input type="text" class="form-control" id="labName" name="nameoflab" placeholder="Name of lab">
+              </div>
+               <div class="form-group">
+                <label for="sampleStatus">Sample Status:</label>
+                <input type="text" class="form-control" id="sampleStatus" name="samplestatus" placeholder="Status of sample">
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+      <%- include('./partials/scripts'); %>
+
+
+  </body>
+
+</html>
